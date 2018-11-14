@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>Welcome to the GC Coffee Shop! <a href="/Home/UserRegistration">Register</a></h2>
+
+@{ 
+
+    Lab23.Models.CoffeeShopDBLab23Entities1 DB = new Lab23.Models.CoffeeShopDBLab23Entities1();
+
+    foreach(Lab23.Models.Item item in DB.Items)
+    {
+        <ul>
+            @item.Name
+            <li>@item.Description</li>
+            <li>Qty: @item.Quantity</li>
+            <li>$@item.Price</li>
+        </ul>
+        <br />
+    }
+}
