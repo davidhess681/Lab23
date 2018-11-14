@@ -40,5 +40,9 @@ namespace Lab23.Controllers
             ViewBag.AddedItem = "Item was successfully added";
             return View("UserRegistration");
         }
+        public ActionResult ItemAdmin()
+        {
+            return View();
+        }
     }
 }

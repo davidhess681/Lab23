@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "ItemAdmin";
+}
+
+<h2>Manage Products</h2>
+
+<br />
+
+<table style="width:80%">
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Price</th>
+    </tr>
+    @{
+        Lab23.Models.CoffeeShopDBLab23Entities1 DB = new Lab23.Models.CoffeeShopDBLab23Entities1();
+
+        foreach (Lab23.Models.Item item in DB.Items)
+        {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Description</td>
+            <td>@item.Quantity</td>
+            <td>$@item.Price</td>
+        </tr>
+
+        }
+    }
+</table>
+
